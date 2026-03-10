@@ -7,6 +7,8 @@ namespace MonoSnake;
 
 public class Game1 : Core
 {
+    private Texture2D _logo;
+
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
 
@@ -22,7 +24,8 @@ public class Game1 : Core
 
     protected override void LoadContent()  // script order #3-ish, called via base.Initialize();
     {
-        base.LoadContent();
+        _logo = Content.Load<Texture2D>("images/mgLogo");
+        //base.LoadContent();
     }
 
     protected override void Update(GameTime gameTime)
@@ -39,7 +42,14 @@ public class Game1 : Core
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
+        // Begin the sprite batch to prepare for rendering.
+        SpriteBatch.Begin();
+
+        // Draw the logo texture
+        SpriteBatch.Draw(_logo, Vector2.Zero, Color.White);
+
+        // Always end the sprite batch when finished.
+        SpriteBatch.End();
 
         base.Draw(gameTime);
     }

@@ -1,52 +1,46 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MonoTutorialLibrary;
 
-namespace MonoSnake
+namespace MonoSnake;
+
+public class Game1 : Core
 {
-    public class Game1 : Game
+    private GraphicsDeviceManager _graphics;
+    private SpriteBatch _spriteBatch;
+
+    public Game1()                         // script order #1
+        : base("Dungeon Slime", 1280, 720, false)
     {
-        private GraphicsDeviceManager _graphics;
-        private SpriteBatch _spriteBatch;
+    }
 
-        public Game1()
-        {
-            _graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-            IsMouseVisible = true;
-        }
+    protected override void Initialize()   // script order #2
+    {
+        base.Initialize();
+    }
 
-        protected override void Initialize()
-        {
-            // TODO: Add your initialization logic here
+    protected override void LoadContent()  // script order #3-ish, called via base.Initialize();
+    {
+        base.LoadContent();
+    }
 
-            base.Initialize();
-        }
+    protected override void Update(GameTime gameTime)
+    {
+        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            Exit();
 
-        protected override void LoadContent()
-        {
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
+        // TODO: Add your update logic here
 
-            // TODO: use this.Content to load your game content here
-        }
+        base.Update(gameTime);
+    }
 
-        protected override void Update(GameTime gameTime)
-        {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+    protected override void Draw(GameTime gameTime)
+    {
+        GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your update logic here
+        // TODO: Add your drawing code here
 
-            base.Update(gameTime);
-        }
-
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
-            base.Draw(gameTime);
-        }
+        base.Draw(gameTime);
     }
 }

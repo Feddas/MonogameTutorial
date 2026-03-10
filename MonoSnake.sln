@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36429.23 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoSnake", "MonoSnake\MonoSnake.csproj", "{86F87A8C-59CD-448C-9E13-D8E584811F1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoTutorialLibrary", "MonoTutorialLibrary\MonoTutorialLibrary.csproj", "{28B48F23-456C-48C4-B9D1-6A0208AC53F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{86F87A8C-59CD-448C-9E13-D8E584811F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F87A8C-59CD-448C-9E13-D8E584811F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F87A8C-59CD-448C-9E13-D8E584811F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B48F23-456C-48C4-B9D1-6A0208AC53F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B48F23-456C-48C4-B9D1-6A0208AC53F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B48F23-456C-48C4-B9D1-6A0208AC53F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B48F23-456C-48C4-B9D1-6A0208AC53F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
